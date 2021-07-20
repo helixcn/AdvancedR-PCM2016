@@ -1,0 +1,164 @@
+\documentclass[UTF8]{beamer} 
+\usepackage{ctex}
+\usepackage{Sweave}
+\usetheme{Boadilla} 
+\usepackage{color} 
+\usepackage{graphicx} 
+
+\begin{document}
+
+\title{R编程与进化分析} 
+\subtitle{内容与目标}
+\author{张金龙} 
+\institute{jinlongzhang01@gmail.com}
+\date{2016年5月9日 北京} 
+
+
+%%% Title Page 
+\frame{\titlepage} 
+
+%%% Page one
+%\begin{frame}[fragile]
+%\frametitle{开始检验}
+%\begin{Sinput}
+%># 中文注释， 本句并不运行
+%>x1 <- runif(100)
+%\end{Sinput}
+%\end{frame}
+
+\section*{Outline}
+\begin{frame}
+\frametitle{目录}
+\tableofcontents
+\end{frame}
+
+\section{进化树之后要回答的问题}
+%\begin{frame}
+%\frametitle{目录}
+%\tableofcontents[currentsection] 
+%\end{frame}
+
+
+\begin{frame}
+\frametitle{进化树能帮我们回答哪些问题？}
+\begin{itemize}
+\item 1. 分类单元之间的系统发育关系
+\item 2. 物种的形成速率受什么影响？ 如： 类群的古老程度， 类群的丰富度， 类群所处的纬度， 类群的特殊生境
+\item 3. 物种形成速率和灭绝速率在历史上发生过哪些变化？
+\item 4. 物种的进化历史越独特， 越应该受到保护吗？
+\item 5. 相近的物种有相似的性状吗？ 有相似的习性吗？
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{进化树能帮我们回答哪些问题？}
+\begin{itemize}
+\item 6. 如果已知某一分支的性状， 是否能够了解其祖先的性状？ 
+\item 7. 物种的适应性是如何进化的？ 
+\item 8. 已知物种的当前分布区， 如何获得其祖先分布区？
+\item 9. 群落内物种的组成是随机的， 还是由于对生境的偏好造成的？
+\end{itemize}
+\end{frame}
+
+\section{本领域主要学者}
+\begin{frame}
+\frametitle{系统发育比较分析的主要学者}
+\begin{itemize}
+\item M. Donoghue，L. Harmon，
+\item A. Purvis， A. Rambaut 
+\item D. Sluter， J. Weir
+\item R. E. Ricklefs
+\item J. J. Wiens
+\item R. A. Pyron
+\item J. Losos, W. Jetz   J.L. Gittleman
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{系统发育比较分析的主要学者}
+\begin{itemize}
+\item T. Garland, S. Blomberg
+\item D. Ackerly, Cam Webb
+\item J. Felsenstein
+\item D. Maddison \& W. Maddison \& 
+\item N. Swenson, N. Kraft, Marc Cadotte
+\item R. Freckleton, M. Pagel, E. Paradis 
+\item D. Radobsky, R. FitzJohn
+\item R. Ree, S. Smith
+\end{itemize}
+\end{frame}
+
+\section{掌握CRAN Task View上的工具}
+\begin{frame}
+\frametitle{R CRAN Task Views 的内容 I }
+
+\begin{itemize}
+\item 基于序列或者植物名录建立进化树 Phylogenetic Inference 
+\item 进化树导入R Getting trees into R
+\item 进化树基本调整 Utility functions: eg. resolving/ladderize
+\item 进化树的基本操作 Tree Manipulation
+\item 进化树绘制 Tree Plotting and Visualization
+\item 祖先状态重建 Ancestral state reconstruction
+\item 物种分化分析 Diversification Analysis
+\item 分子钟 Divergence Times
+\item 进化树的模拟 Tree Simulations
+\end{itemize}  
+\end{frame}
+
+\begin{frame}
+\frametitle{R CRAN Task Views 的内容 II}
+
+\begin{itemize}
+\item 性状进化 Trait evolution
+\item 性状模拟 Trait Simulations
+\item 群落系统发育 Community/Microbial Ecology
+\item 气候适应性进化 Phyloclimatic Modeling
+\item 重建祖先分布区 Phylogeography/Biogeography
+\item 物种与种群的界定与模拟 Species/Population Delimitation
+
+\item Taxonomy
+\end{itemize}  
+\end{frame}
+
+\section{学习目标}
+\begin{frame}
+\frametitle{本课程能学到什么？}
+\begin{itemize}
+\item 搭建开发平台：R程序包的维护，CRAN, R-forge, Github, Bioconductor， 版本控制 git
+\item R语言的基本用法，对象，编写函数
+\item 文本处理与大数据，正则表达式
+\item S3 与 S4，Rcpp与其他语言混合编程
+\item R编程的习惯
+\item 建立进化树，与分子钟校对
+\item 进化树读取以及基本操作: ape
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{本课程能学到什么？}
+\begin{enumerate}
+\item R绘图基础，以及绘制进化树 ape, ggplot2, ggtree
+\item 系统发育比较分析的基本原理 
+\begin{itemize}
+\item 极大似然分析
+\item 贝叶斯推断
+\item 优化方法
+\item 随机化零模型
+\item 模型选择
+\item Bootstrap
+\end{itemize}
+\end{enumerate}
+\end{frame}
+
+\begin{frame}
+\frametitle{本课程能学到什么？}
+\begin{itemize}
+\item 系统发育多样性与进化独特性
+\item 群落系统发育 Phylomatic, Phylocom , picante
+\item 分化速率与灭绝速率推断, diversitree, laser, geiger, MEDUSA
+\end{itemize}
+\end{frame}
+
+\end{document}
